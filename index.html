@@ -101,20 +101,11 @@
             <div class="slides">
                 <!-- Opening -->
                 <section>
-
-
-                    All slides on <a href="https://github.com/gdiphilly/intro-to-sql">GitHub</a>:
-                    https://github.com/gdiphilly/intro-to-sql
-                    <h4>
-                        <br>
-
-                </section>
-                <section>
                     <h1>
                         Intro to SQL
                     </h1><img src="img/circle-gdi-logo.png" alt="GDI Logo">
                     <p>
-                        <small>Annye Driscoll: <a href="http://annyedriscoll.com/">annyedriscoll.com/</a></small>
+                        <small>Annye Driscoll | <a href="http://annyedriscoll.com/">annyedriscoll.com</a></small>
                     </p>
                 </section><!-- Compatibility-->
                 <section>
@@ -146,10 +137,10 @@
                 </section>
                 <section>
                     <h3>
-                        Tell Us About Yourself
+                        Tell us about yourself
                     </h3>
                     <ul>
-                        <li>Who are you?
+                        <li>What's your name?
                         </li>
                         <li>What's your experience level with SQL?
                         </li>
@@ -166,7 +157,7 @@
                 </section>
                 <section>
                     <h2>
-                        About Me
+                        About me
                     </h2>
                     <ul>
                         <li>Full-stack developer
@@ -277,7 +268,7 @@
                                     </li>
                                     <ul ul="" class="c4">
                                         <li>
-                                            <small>v.s. deleting tables</small>
+                                            <small>vs. deleting tables</small>
                                         </li>
                                     </ul>
                                 </ul>
@@ -290,9 +281,6 @@
                                 <li>
                                     <small>Practice</small>
                                 </li>
-                                <li>
-                                    <small>GDI Survey</small>
-                                </li>
                             </ul>
                         </ul>
                     </div>
@@ -300,16 +288,16 @@
                 </section>
                 <section>
                     <h3>
-                        What's a relational database?
+                        What is a database?
                     </h3>
                     <p>
-                        A virtual organized file cabinet that makes data available to people and computers across the organization.
+                      A set of related data and the way it is organized!
+                    </p>
                 </section>
                 <section>
           <h3>What is a database?</h3>
           <p>A collection of tables, schemas, queries, reports, views, and other objects (it’s not just tables of data!) often organized in a way that supports
             processes or reflects real life in order to facilitate business or functions.</p>
-            <img alt="Overwhelmed cat" src="dist\img\WUTCat.jpg" />
         </section>
 
         <section>
@@ -356,7 +344,7 @@
 										</div>
 								</section>
 
-                <section>
+                <!-- <section>
                     <h3>
                         Databases, schemas, and tables
                     </h3>
@@ -367,7 +355,7 @@
                     <p>
                         Excel File → Workbook → Row → Cell
                     </p>
-                </section>
+                </section> -->
                 <section>
                     <h3>
                         What's SQL?
@@ -452,12 +440,13 @@
                 <section>
                     <h3>
                         Databases, schemas, and tables
+                        </h3>
                     <ul>
                         <li>
-                            <span class="c16">Reading</span> tables other people wrote
+                            <span class="c16">Reading</span> tables you or other people wrote
                         </li><br>
                         <li>
-                            <span class="c16">Modifying</span> those tables to add your own information/ creating your own tables to read from CSV files, other
+                            <span class="c16">Modifying</span> those tables to add your own information and/or creating your own tables to read from CSV files, other
                             SQL tables, and other systems.
                         </li><br>
                     </ul>
@@ -472,7 +461,7 @@
                                 <span class="c1">Create</span> INSERT, CREATE
                             </li>
                             <ul class="c12">
-                                <li>Adding rows to your table
+                                <li>Adding rows to your table or tables to your database
                                 </li>
                             </ul>
                             <li>
@@ -486,14 +475,14 @@
                                 <span class="c1">Update</span> UPDATE, ALTER
                             </li>
                             <ul class="c12">
-                                <li>Changing specifc information in your table
+                                <li>Changing specifc information in your table or your database
                                 </li>
                             </ul>
                             <li>
                                 <span class="c1">Delete</span> DELETE, DROP, TRUNCATE
                             </li>
                             <ul class="c12">
-                                <li>Erase your data
+                                <li>Erase your data or your tables
                                 </li>
                             </ul>
                         </ul>
@@ -509,7 +498,7 @@
                     <ul>
                         <li>How many customers do we have in Los Angeles?
                         </li><br>
-                        <li>What's that person's Facebook and Twitter handle?
+                        <li>What's a certain person's Facebook and Twitter handle?
                         </li><br>
                         <li>Did profits go up or down this quarter?
                         </li><br>
@@ -621,9 +610,9 @@
                 </section>
                 <section>
                     <h3>
-                        Focusing on phpMyAdmin for the first half of the class.
+                        Focusing on phpMyAdmin for the majority of the class.
                     </h3>
-                    <p class="c24">
+                    <p>
                         We have a test dataset of employee records we'll be using in the employee schema.
                     </p><img src="img/options.png" alt="Options" width="850px">
                 </section>
@@ -645,10 +634,10 @@
                         Database/schema used interchangeably
                     </p>
                     <p class="c26">
-                        Database → Schema ---&gt; Table
+                        Database → Schema → Table
                     </p>
                     <p class="c26">
-                        Book ---&gt; Chapter ---&gt; Page
+                        Book → Chapter → Page
                     </p>
                     <p class="c26">
                         MySQL Database → Employees Schema → employees Table
@@ -659,7 +648,7 @@
                         How to name schemas and tables
                     </h3>
                     <ul class="c12">
-                        <li>Schema/Databse: <span class="c27">employees</span>
+                        <li>Schema / Database: <span class="c27">employees</span>
                         </li><br>
                         <li>Tables:
                         </li>
@@ -724,8 +713,8 @@ SELECT * FROM employees.salaries; </code></pre>
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT title, emp_no FROM employees.titles; </code></pre>
                     <p>
-                        A note about the semi-colon: you don't really need it, depending on which flavor of SQL you're using, but it's good
-                        practice in general to include it. Like a period at the end of an English sentence.
+                        A note about the semi-colon: depending on which flavor of SQL you're using you may not need it, but it's good
+                        practice in general to include it.
                     </p>
                 </section>
                 <section>
@@ -2202,7 +2191,7 @@ varchar(4) after times_watched;</code></pre>
                 </section>
                 <section>
                     <h3>
-                        The end!
+                        You did it!
                     </h3>
                     <div>
                         <div class="left c58">
@@ -2239,22 +2228,17 @@ varchar(4) after times_watched;</code></pre>
                         More SQL Resources
                     </h3>
                     <ul>
+                      <li>
+                          <a href="https://www.w3schools.com/sql/default.asp" target="_blank">W3 Schools</a>
+                          Great for learning or just for checking syntax - includes coding exercises on every page.
+                      </li>
                         <li>
-                            <a href=
-                            "https://www.amazon.com/Head-First-SQL-Brain-Learners/dp/0596526849/ref=sr_1_1?ie=UTF8&amp;qid=1489447805&amp;sr=8-1&amp;keywords=head+first+sql"
-                            target="_blank">Head First SQL</a> Good visual book
-                        </li>
-                        <li>
-                            <a href="http://sql.learncodethehardway.org/d-Way.html" target="_blank">Learn SQL The Hard Way</a> Highly recommended, and not hard
+                            <a href="https://learncodethehardway.org/sql/" target="_blank">Learn SQL The Hard Way</a> Comes highly recommended, and not hard
                             at all
                         </li>
                         <li>
                             <a href="http://www.codinghorror.com/blog/2007/10/a-visual-explanation-of-sql-joins.html" target="_blank">Visualizing SQL Joins</a>
-                            Great visual intro
-                        </li>Good visual book
-                        <li>
-                            <a href="http://stackoverflow.com/questions/tagged/sql?sort=frequent&amp;pageSize=15" target="_blank">Popular SQL Questions</a>
-                            Highly recommended, and not hard at all
+                            Awesome blog post for simplifying joins
                         </li>
                     </ul><br>
                     <br>
@@ -2262,50 +2246,14 @@ varchar(4) after times_watched;</code></pre>
                         Practice, practice, practice! Upload your Excel spreadsheets.
                     </p>
                     <ul>
-                        <li>Sample<a href="https://launchpad.net/test-db" target="_blank">Practice Data Set</a> that we used in class
+                        <li><a href="https://launchpad.net/test-db" target="_blank">Practice data set</a> that we used in class
                         </li>
                     </ul>
                 </section>
                 <section>
                     <h3>
-                        Get Involved
+                      Thank you!
                     </h3>
-                    <ol>
-                        <li>Join Slack community
-                        </li>
-                        <li>Teaching assist
-                        </li>
-                        <li>Teach something
-                        </li>
-                        <li>Mentor or be mentored
-                        </li>
-                    </ol>
-                    <p>
-                        <a href="http://www.meetup.com/Girl-Develop-It-Philadelphia/pages/Get_Involved/" target="_blank">All forms here</a>
-                    </p>
-                </section>
-                <section>
-                    <h3>
-                        More SQL: Local Groups
-                    </h3>
-                    <ul class="c59">
-                        <li>Philly DB <a href="http://www.meetup.com/PhillyDB/" target="_blank">http://www.meetup.com/PhillyDB/</a>
-                        </li>
-                        <li>Data Science Philly <a href="http://www.meetup.com/DataPhilly/" target="_blank">http://www.meetup.com/DataPhilly/</a>
-                        </li>
-                        <li>Philly Open Data <a href="http://www.meetup.com/Philly-Open-Data/" target="_blank">http://www.meetup.com/Philly-Open-Data/</a>
-                        </li>
-                        <li>Philly PostrgreSQL UG <a href="http://www.meetup.com/phlpug/" target="_blank">http://www.meetup.com/phlpug/</a>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>
-                      Survey
-                    </h3>
-                    <p>
-                        We value your feedback and are always trying to improve.
-                    </p>
                     <p>
                         Annye Driscoll | annye.driscoll@gmail.com
                     </p>
