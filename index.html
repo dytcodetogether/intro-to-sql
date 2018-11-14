@@ -4,7 +4,7 @@
         <meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.4.0">
         <meta charset="utf-8">
         <title>
-            Intro to SQL - Vicki Boykis
+            Intro to SQL - Annye Driscoll
         </title>
         <meta name="description" content=
         "Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
@@ -101,7 +101,7 @@
             <div class="slides">
                 <!-- Opening -->
                 <section>
-                    
+
 
                     All slides on <a href="https://github.com/gdiphilly/intro-to-sql">GitHub</a>:
                     https://github.com/gdiphilly/intro-to-sql
@@ -114,7 +114,7 @@
                         Intro to SQL
                     </h1><img src="img/circle-gdi-logo.png" alt="GDI Logo">
                     <p>
-                        <small>Vicki Boykis; <a href="http://vickiboykis.com">vickiboykis.com</a> / <a href="http://twitter.com/vboykis">@vboykis</a></small>
+                        <small>Annye Driscoll: <a href="http://annyedriscoll.com/">annyedriscoll.com/</a></small>
                     </p>
                 </section><!-- Compatibility-->
                 <section>
@@ -155,13 +155,13 @@
                         </li>
                         <li>What do you hope to get out of the class?
                         </li>
-                        <li>What is your favorite movie, and how many times have you watched it?
+                        <li>What is your favorite movie and how many times have you watched it?
                         </li>
                     </ul><br>
                     <br>
                     <br>
                     <p>
-                        We're going to make a table out of this info in part 2, and the data will live here: [Table Link]
+                        We're going to make a table out of this info in part 2!
                     </p>
                 </section>
                 <section>
@@ -169,13 +169,13 @@
                         About Me
                     </h2>
                     <ul>
-                        <li>Data scientist
+                        <li>Full-stack developer
                         </li>
-                        <li>9+ years of experience with SQL
+                        <li>SQL education is from the "field"
                         </li>
-                        <li>Favorite movie is Beauty and the Beast, watched 25 times. <small>(and that was just yesterday)</small>
+                        <li>Favorite movie is Return of the King, fell asleep to countless times.
                         </li>
-                    </ul><img src="http://i984.photobucket.com/albums/ae323/arielstreasures/belle2.gif" alt="Beauty and the Beast">
+                    </ul>
                 </section><!-- Examples of basic html based slides -->
                 <section>
                     <h3>
@@ -199,7 +199,7 @@
                     </h3>
                     <div id="column1" class="c5">
                         <h3 class="c2">
-                            <small>Morning (10-12): c<span class="c1">R</span>ud</small>
+                            <small>Pre-break: c<span class="c1">R</span>ud</small>
                         </h3>
                         <ul>
                             <li>
@@ -247,7 +247,7 @@
                     </div>
                     <div id="column2" class="c5">
                         <h3 class="c2">
-                            <small>Afternoon(12:30 - 3): <span class="c1">C</span>r<span class="c1">UD</span></small>
+                            <small>Post-break: <span class="c1">C</span>r<span class="c1">UD</span></small>
                         </h3>
                         <ul>
                             <ul>
@@ -304,43 +304,42 @@
                     </h3>
                     <p>
                         A virtual organized file cabinet that makes data available to people and computers across the organization.
-                    </p><img src="img/operator.png" alt="Operator" width="900">
                 </section>
                 <section>
-                    <h4>
-                        The language of relational databases (1/2)
-                    </h4>
-                    <div class="c12">
-                        <ul>
-                            <li>
-                                <span class="c9">Database:</span> A group of data organized in a logical way(Excel workbook)
-                            </li>
-                            <ul>
-                                <li class="c3">
-                                    <span class="c9">Schema:</span> Layout of the database, sometimes interchangeable with database (Excel workbook + name of
-                                    workbook)
-                                </li>
-                                <li class="c3">Table: A subset of a database (Excel worksheet)
-                                </li>
-                                <ul ul="" class="c4">
-                                    <li>Rows (records) and columns (fields): Parts of a table
-                                    </li>
-                                </ul>
-                            </ul>
-                            <li>
-                                <span class="c1">CRUD (Create, Read, Update, Delete):</span> How you change the databases and tables in the database
-                            </li><br>
-                            <li>
-                                <b>Relational Data Model</b> : Data related to each other are stored a certain way and "point" to each other (Like Excel cell
-                                references)
-                            </li><br>
-                        </ul>
-                    </div>
-                </section>
+          <h3>What is a database?</h3>
+          <p>A collection of tables, schemas, queries, reports, views, and other objects (it’s not just tables of data!) often organized in a way that supports
+            processes or reflects real life in order to facilitate business or functions.</p>
+            <img alt="Overwhelmed cat" src="dist\img\WUTCat.jpg" />
+        </section>
+
+        <section>
+          <h3>What is a database - what are those things?!</h3>
+          <p>
+            <em>A collection of tables, schemas, queries, views…</em>
+            <ul>
+              <li><b>Table</b> = collection of related data arranged in columns and rows.</li>
+              <li><b>Schema</b> = logical grouping of objects (tables, etc.), often in a functional way.</li>
+              <li><b>Query</b> = request for information from a database.</li>
+              <li><b>View</b> = result of a stored query.</li>
+              <aside class="notes">So for 1 database you may have an HR schema and a sales schema. A view looks like a table, but a view’s data is calculated
+              in real-time. Also provide pretty significant advantages to a
+              table - can restrict access to just views (can be a subset of data), can simplify or aggregate data, take very little space to
+              store since a database stores just the definition of the view, not a copy of all the data it has.</aside>
+            </ul>
+          </p>
+        </section>
+
+        <section>
+          <span class="c1">CRUD (Create, Read, Update, Delete):</span> How you change the databases and tables in the database
+</section>
+<section>
+  <h3>Our database model of choice</h3>
+  <p><b>Relational database</b> = organizes data into one or more tables of columns and rows with a unique key identifying each row (record).</p>
+</section>
 
 								<section>
 										<h4>
-												The language of relational databases (2/2)
+												The language of relational databases
 										</h4>
 										<div class="c15">
 												<ul>
@@ -349,10 +348,6 @@
 														</li><br>
 														<li>
 																<b>Indexes:</b> Make databases easier to search
-														</li><br>
-														<li>
-																<b>RDBMS systems:</b> Types of relational databases that have all the properties of relational data models: MySQL, Oracle,
-																Access, Postgres
 														</li><br>
 														<li>
 																<b>Queries:</b> How to ask questions of the tables and databases
@@ -372,11 +367,6 @@
                     <p>
                         Excel File → Workbook → Row → Cell
                     </p>
-                </section>
-                <section>
-                    <h3>
-                        What's a relational database?
-                    </h3>Excel spreadsheets you can join without Vlookups! <img src="img/sql_schema.png" alt="relational model">
                 </section>
                 <section>
                     <h3>
@@ -462,7 +452,6 @@
                 <section>
                     <h3>
                         Databases, schemas, and tables
-                    </h3><img src="https://media3.giphy.com/media/8N5tQZ2X4byNi/200.webp#1" alt="guy giving horns" width="500px">
                     <ul>
                         <li>
                             <span class="c16">Reading</span> tables other people wrote
@@ -751,11 +740,11 @@ SELECT * FROM employees.salaries; </code></pre>
                         Selecting multiple columns:
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT emp_no, dept_no FROM employees.dept_emp;</code></pre>
-                    
+
                 </section>
                 <section>
                     <h3>
-                        Distinct: selecting only unique instatnces of that column.
+                        Distinct: selecting only unique instances of that column.
                     </h3>
                     <pre><code contenteditable="" class="sql">SELECT DISTINCT  title FROM employees.titles;</code></pre>
                     <div class="c34">
@@ -834,7 +823,7 @@ SELECT * FROM employees.salaries; </code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.salaries;
 2,844,047
                                         </code></pre>
-                    
+
                 </section>
                 <section>
                     <h3>
@@ -1170,8 +1159,6 @@ GROUP BY last_name;</code></pre>
                     <div>
                         Exercises:
                         <ul>
-                            <li>What happens when you search in all caps?
-                            </li>
                             <li>What happens when you do last_name = 'S%''
                             </li>
                             <li>What's the difference between like and =?
@@ -1224,7 +1211,7 @@ WHERE title LIKE '%Engineer%';</code></pre>
                     </h3>
                     <div id="column1" class="c5">
                         <h3 class="c2">
-                            <small>Morning (10-12): c<span class="c1">R</span>ud</small>
+                            <small>Pre-break: c<span class="c1">R</span>ud</small>
                         </h3>
                         <ul>
                             <li>
@@ -1272,7 +1259,7 @@ WHERE title LIKE '%Engineer%';</code></pre>
                     </div>
                     <div id="column2" class="c5">
                         <h3 class="c2">
-                            <small>Afternoon(12:30 - 3): <span class="c1">C</span>r<span class="c1">UD</span></small>
+                            <small>Post-break: <span class="c1">C</span>r<span class="c1">UD</span></small>
                         </h3>
                         <ul>
                             <ul>
@@ -1491,7 +1478,7 @@ LEFT JOIN titles c ON a.emp_no = c.emp_no;</code></pre>
                     <p class="c45">
                         What is this query telling us?
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT first_name, last_name,a.emp_no, hire_date, 
+                    <pre><code contenteditable="" class="sql">SELECT first_name, last_name,a.emp_no, hire_date,
 COUNT(DISTINCT title) , COUNT(DISTINCT salary)
 FROM employees.employees a
 JOIN employees.salaries b ON a.emp_no = b.emp_no
@@ -1519,7 +1506,7 @@ ORDER BY last_name</code></pre>
                 </section>
                 <section>
                     <h2>
-                        Lunch!
+                        Break!
                     </h2><img src="img/cat_stretch.jpg" alt="kitty!">
                 </section>
                 <section>
@@ -1536,7 +1523,7 @@ ORDER BY last_name</code></pre>
                         Subqueries
                     </h3>
                     <p>
-                        A subquery or inner query or nested query is a query within a query. Most of the time, a subquery is used when you know how to search
+                        A subquery (or inner query or nested query) is a query within a query. Most of the time, a subquery is used when you know how to search
                         for a value using a SELECT statement, but not the exact value<br>
                         <img src="img/small-nested-dolls.png" alt="Small Nested dolls" width="400px">
                     </p>
@@ -1561,7 +1548,7 @@ FROM employees.employees;</code></pre>
                         <li>How many people got raises in 1999?
                         </li>
                         <pre><code contenteditable="" class="sql"> SELECT * from (
-        SELECT emp_no, COUNT(*) AS number_of_salaries 
+        SELECT emp_no, COUNT(*) AS number_of_salaries
         FROM salaries
         WHERE from_date&gt;'1998-01-01'
         AND from_date&lt;'2000-01-01'
@@ -1569,7 +1556,7 @@ FROM employees.employees;</code></pre>
         WHERE number_of_salaries &gt;1</code></pre>
                         <li>What's the most common job title we have?
                         </li>
-                        <pre><code contenteditable="" class="sql">SELECT title, COUNT(DISTINCT a.emp_no) 
+                        <pre><code contenteditable="" class="sql">SELECT title, COUNT(DISTINCT a.emp_no)
 FROM titles a
 JOIN employees b
 ON a.emp_no=b.emp_no
@@ -1635,9 +1622,8 @@ GROUP BY title</code></pre>
                     </h3>
                     <p>
                         You have the ability to create tables. But also to delete them by accident, to create duplicate data,or to confuse people with data.
-                    </p><img src="http://i.imgur.com/Mps79UZ.jpg" alt="Genie" width="564px">
                     <p>
-                        You have the power to make people hate you. <span class="c47">Use it wisely :)</span>
+                        You have great power. <span class="c47">Use it wisely :)</span>
                     </p>
                 </section>
                 <section>
@@ -1674,7 +1660,7 @@ GROUP BY title</code></pre>
                         Let's have: First Name, Favorite Movie, Number of times watched
                     </p><img src="img/movie-table.png" alt="Create Schema" width="700px">
                     <p>
-                        First, we need to design it a bit in our head. Which columns do we want? Which one will be the unique primary key? How to we want to
+                        First, we need to design it a bit in our head. Which columns do we want? Which one will be the unique primary key? How do we want to
                         name the columns?
                     </p>
                 </section>
@@ -1693,11 +1679,8 @@ GROUP BY title</code></pre>
                 </section>
                 <section>
                     <h3>
-                        Quick Overview of Database Design(from Sondra's class)
+                        Quick Overview of Database Design
                     </h3>
-                    <p>
-                        Relational Database Model
-                    </p>
                     <p>
                         Storing the data as relations
                     </p>
@@ -1706,13 +1689,13 @@ GROUP BY title</code></pre>
                         </li>
                         <li>saves space
                         </li>
-                        <li>reduces mistakes (ties in to consistency)
+                        <li>reduces mistakes
                         </li>
                     </ul>
                 </section>
                 <section>
                     <h3>
-                        Quick Overview of Database Design(from Sondra's class)
+                        Quick Overview of Database Design
                     </h3>
                     <p>
                         Tables are joined on special fields called keys
@@ -1723,8 +1706,8 @@ GROUP BY title</code></pre>
                         <ul>
                             <li>A field (or set of fields) that uniquely identify a row
                             </li>
-                            <li>In math speak, the minimal set of fields that the row is <span class="c48">functionally dependent</span> upon
-                            </li>
+                            <!-- <li>In math speak, the minimal set of fields that the row is <span class="c48">functionally dependent</span> upon
+                            </li> -->
                         </ul>
                     </ul><br>
                     <br>
@@ -1734,7 +1717,7 @@ GROUP BY title</code></pre>
                         <ul>
                             <li>A field (or set of fields) that is a PK in some other table
                             </li>
-                            <li>IThere can be multiple FK in a table
+                            <li>There can be multiple FK in a table
                             </li>
                             <li>Points to a row in another table
                             </li>
@@ -1745,9 +1728,6 @@ GROUP BY title</code></pre>
                     <h3>
                         Data Types
                     </h3>
-                    <p>
-                        Data usually comes in two types: numbers and charactes
-                    </p>
                     <ul>
                         <li class="c49">Numbers
                         </li>
@@ -1762,7 +1742,7 @@ GROUP BY title</code></pre>
                         <li class="c49">Strings
                         </li>
                         <ul>
-                            <li>Varchar(can't add/subtract):<span class="c50">[Belle, five,5]</span>
+                            <li>Varchar(can't add/subtract):<span class="c50">[Belle, five, 5]</span>
                             </li>
                             <ul>
                                 <li>Have to specify length
@@ -1780,9 +1760,6 @@ GROUP BY title</code></pre>
                             </li>
                         </ul>
                     </ul>
-                    <p class="c46">
-                        *Accepted mySQL formats: https://dev.mysql.com/doc/refman/5.0/en/numeric-types.html
-                    </p>
                 </section>
                 <section>
                     <h3>
@@ -1797,7 +1774,7 @@ GROUP BY title</code></pre>
                         Our movie database (with real data)
                     </h3><img src="img/movie-table.png" alt="movie table" width="650px">
                     <ul>
-                        <li>First Name as the Primary Key and Foreign Key
+                        <li>First Name as the Primary Key and Foreign Key?
                         </li>
                         <ul>
                             <li>We can join by the name, as long as it's unique
@@ -1830,7 +1807,7 @@ GROUP BY title</code></pre>
                         Run in the sample place you did your select statements:
                     </p><img src="img/sql-create.png" alt="sql create" width="800px">
                 </section>
-                <section>
+                <!-- <section>
                     <h3 class="c42">
                         Some Data types in MySQL(Part 2)
                     </h3>
@@ -1908,7 +1885,7 @@ GROUP BY title</code></pre>
                             </td>
                         </tr>
                     </table>
-                </section>
+                </section> -->
                 <section>
                     <h3>
                         Here's the create statement for one of the tables we've been working with
@@ -1923,15 +1900,27 @@ PRIMARY KEY (emp_no);</code></pre>
                     <p>
                         Which field is the primary key?<br>
                         Which fields are numbers?<br>
-                        What's <a href="https://dev.mysql.com/doc/refman/5.7/en/enum.html">enum</a>*?
+                        What's <a href="https://dev.mysql.com/doc/refman/5.7/en/enum.html">enum</a>*?<br>
+                        What's meant by "NOT NULL"?
                     </p>
                 </section>
+                <section>
+                  <ul>
+                  <li>NOT NULL - Ensures that a column cannot have a NULL value</li>
+                <li>UNIQUE - Ensures that all values in a column are different</li>
+                <li>PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table</li>
+                <li>FOREIGN KEY - Uniquely identifies a row/record in another table</li>
+                <li>CHECK - Ensures that all values in a column satisfies a specific condition</li>
+                <li>DEFAULT - Sets a default value for a column when no value is specified</li>
+                <li>INDEX - Used to create and retrieve data from the database very quickly</li>
+              </ul>
+              </section>
                 <section>
                     <h3>
                         Let's get to it
                     </h3><img src="img/create-table-increment.png" alt="create-table-increment" width="800px">
                 </section>
-                <section>
+                <!-- <section>
                     <h3>
                         In PHPMYADMIN: STEP 1
                     </h3><img src="img/phpmyadmin-step1.png" alt="phpmyadmin step 1">
@@ -1948,55 +1937,54 @@ PRIMARY KEY (emp_no);</code></pre>
                     <p>
                         Congratulations, it's a table!
                     </p><img src="img/phpmyadmin-step3.png" alt="phpmyadmin step 3">
-                </section>
+                </section> -->
                 <section>
                     <h3>
                         Now let's do some quick analysis
                     </h3>
-                    <pre><code contenteditable="" class="sql">SELECT * FROM vicki.moviesample;
-SELECT first_name FROM vicki.moviesample;
-SELECT COUNT(*) FROM vicki.moviesample;</code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT * FROM annye.moviesample;
+SELECT first_name FROM annye.moviesample;
+SELECT COUNT(*) FROM annye.moviesample;</code></pre>
                     <p>
                         What do we get?
                     </p>
                     <p>
-                        Nothing! because our table has no data. :(...yet
+                        Nothing! because our table has no data...yet
                     </p>
                 </section>
                 <section>
                     <h3>
-                        To the SQL: Inserting data into a SQL table
+                        Inserting data into a SQL table
                     </h3>
                     <p>
                         Now that we have the table set up, we can insert the values. Let's load a row of data.
                     </p>
                     <pre><code contenteditable="" class="sql">INSERT INTO
-yourname.tablename(first_name, favorite_movie,
-times_watched) -- column names
-VALUES ('Jasmine', 'Aladdin', '456'); -- column values </code></pre>
+yourname.tablename (first_name, favorite_movie, times_watched) -- column names
+VALUES ('Jasmine', 'Aladdin', '456'); --column values </code></pre>
                 </section>
                 <section>
                     <h3>
                         Adding data to tables </h3>
 
-											<pre><code contenteditable="" class="sql">INSERT INTO vicki.moviesample(first_name, favorite_movie, times_watched)
+											<pre><code contenteditable="" class="sql">INSERT INTO annye.moviesample(first_name, favorite_movie, times_watched)
 VALUES ('Alice','Alice in Wonderland', 5);</code></pre>
 
                 </section>
                 <section>
                     <h3>
-                        Now let's check it..wahoo! We have rows!
+                        Now let's check it...wahoo! We have rows!
                     </h3><img src="img/we-have-rows.png" alt="we have rows" width="800px">
                 </section>
                 <section>
                     <h3>
                         How do we add the rest of the data?
                     </h3>
-                    <pre><code contenteditable="" class="sql">INSERT INTO vicki.moviesample
+                    <pre><code contenteditable="" class="sql">INSERT INTO annye.moviesample
 (first_name, favorite_movie,times_watched)
-VALUES ('Vicki', 'Beauty and the Beast', '5');
+VALUES ('Annye', 'Return of the King', '20');
 
-INSERT INTO vicki.movie_sample
+INSERT INTO annye.movie_sample
 (first_name, favorite_movie,times_watched)
 VALUES ('Jasmine', 'Aladdin','456'); </code></pre>
                 </section>
@@ -2034,7 +2022,7 @@ FROM yourname.moviesample
 GROUP BY favorite_movie
 ORDER BY COUNT(DISTINCT first_name) DESC;</code></pre>
                     <ul>
-                        <li>What's the most popular name this Saturday?
+                        <li>What's the most popular initial this Saturday?
                         </li>
                         <li>How many times was the most someone watched a movie?
                         </li>
@@ -2049,20 +2037,18 @@ ORDER BY COUNT(DISTINCT first_name) DESC;</code></pre>
                         Now, let's make another table
                     </h3>
                     <p>
-                        We want to see which decade was more popular among GDI members. This one has the data for the movie name and the year it was made.
+                        We want to see which decade was most popular among GDI members. This one has the data for the movie name and the year it was made.
                     </p><img src="img/another-table.png" alt="another table">
                 </section>
                 <section>
                     <h3>
                         How do we add the rest of the data?
                     </h3>
-                    <pre><code contenteditable="" class="sql">SELECT * FROM vicki.moviesample a
-JOIN vicki.movie_year b
-ON a.movie_title=b. movie_title</code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT * FROM annye.moviesample a
+JOIN annye.movie_year b
+ON a.movie_title=b.movie_title</code></pre>
                     <ul>
                         <li>What happens when you have two fields with the same name in your select statement?
-                        </li>
-                        <li>What is movie title called in year_released (special role?)
                         </li>
                         <li>What would be a better field to join on?
                         </li>
@@ -2088,11 +2074,11 @@ ON a.movie_title=b. movie_title</code></pre>
                             This is the part where you have to be really careful. Most users won't have access to delete tables.
                         </p>
                         <p>
-                            <span class="c55">truncate table;</span> Leaves the table structure in tact, just deletes the values. (deleting all values in a
-                            spreadsheet, keeping file)
+                            <span class="c55">truncate table:</span> Leaves the table structure intact, just deletes the values. (Like deleting all values in a
+                            spreadsheet, but keeping the Excel file.)
                         </p><br>
-                        <p class="c56">
-                            drop table; Deletes EVERYTHING. BADBADBAD. (file goes in the trash)
+                        <p class="c55">
+                            drop table: Deletes EVERYTHING. BADBADBAD. (file goes in the trash)
                         </p>
                     </div><img src="https://s-media-cache-ak0.pinimg.com/originals/19/d2/0a/19d20a7c0bd91a4ffd16b84ed4b64ca2.jpg" alt="Grumpy Cat no" width=
                     "250px">
@@ -2104,10 +2090,8 @@ ON a.movie_title=b. movie_title</code></pre>
                     <p>
                         Easy way in UI: The delete button. Be careful!
                     </p><img src="img/dropping-rows.png" alt="dropping rows" width="700px">
-                    <ul class="c12">
-                        <li>SQL...more accurate.
-                        </li><code>DELETE FROM user1.moviesample WHERE first_name='Shrek';</code>
-                    </ul>
+                    <p>SQL can be much more accurate:</p>
+                    <code>DELETE FROM annye.moviesample WHERE first_name='Shrek';</code>
                 </section>
                 <section>
                     <h3>
@@ -2117,7 +2101,7 @@ ON a.movie_title=b. movie_title</code></pre>
 WHERE first_name like '%S';
 
 DELETE FROM moviesample
-WHERE times_watched &gt;='500'; </code></pre>
+WHERE times_watched &gt;= '500'; </code></pre>
                 </section>
 
 								<section>
@@ -2126,20 +2110,20 @@ WHERE times_watched &gt;='500'; </code></pre>
                     </h3>
                     <ul class="c12">
                         <li>
-                            <code>SELECT</code> is to count things
+                            <code>SELECT</code> is to look at data
                         </li>
                         <li>
-                            <code>CREATE</code>is to create a table
+                            <code>CREATE</code> is to create a table
                         </li>
                         <li>
-                            <code>DELETE</code> is to erase
+                            <code>DELETE</code> is to erase data or a table
                         </li>
                         <li>
-                            <code>UPDATE</code> is to change specific entries
+                            <code>UPDATE</code> is to change specific data entries
                         </li><br>
                         <ul>
                             <pre><code contenteditable="" class="sql">UPDATE moviesample
-SET first_name = 'Chihiro', times_watched= 3
+SET first_name = 'Chihiro', times_watched = 3
 WHERE movie = 'Spirited Away';</code></pre>
                             <p>
                                 Try it now
@@ -2153,13 +2137,13 @@ WHERE movie = 'Spirited Away';</code></pre>
                     </h3>
                     <ul class="c12">
                         <li>
-                            <code>SELECT</code> is to count things
+                            <code>SELECT</code> is to look at data
                         </li>
                         <li>
-                            <code>CREATE</code>is to create a table
+                            <code>CREATE</code> is to create a table
                         </li>
                         <li>
-                            <code>DELETE</code> is to erase
+                            <code>DELETE</code> is to erase data or a table
                         </li>
                         <li>
                             <code>ALTER</code> is to fundamentally change a table:
@@ -2171,12 +2155,12 @@ ALTER TABLE icecream MODIFY flavor VARCHAR(35);</code></pre>
                             <p>
                                 Try it now:
                             </p>
-                            <pre><code contenteditable="" class="sql">ALTER TABLE vicki.moviesample ADD COLUMN release_yr
+                            <pre><code contenteditable="" class="sql">ALTER TABLE annye.moviesample ADD COLUMN release_yr
 varchar(4) after times_watched;</code></pre>
                         </ul>
                     </ul>
                 </section>
-                <section>
+                <!-- <section>
                     <h3>
                         Troubleshooting SQL Errors
                     </h3>
@@ -2198,7 +2182,7 @@ varchar(4) after times_watched;</code></pre>
                         <li>You haven't aliased your table
                         </li>
                     </ul>
-                </section>
+                </section> -->
                 <section>
                     <h3>
                         Best Practices
@@ -2206,7 +2190,7 @@ varchar(4) after times_watched;</code></pre>
                     <ul>
                         <li>Limit your queries by timerange
                         </li>
-                        <li>Only do joins on primary keys
+                        <li>Primarily join on primary keys
                         </li>
                         <li>Profile your data beforehand
                         </li>
@@ -2214,16 +2198,7 @@ varchar(4) after times_watched;</code></pre>
                         </li>
                         <li>Be friends with your database people
                         </li>
-                        <ul>
-                            <li>Write explain plans!
-                            </li>
-                        </ul>
                     </ul>
-                </section>
-                <section>
-                    <h3>
-                        A word about non-relational "big data"
-                    </h3><img src="img/big-data.png" alt="big-data" width="800px">
                 </section>
                 <section>
                     <h3>
@@ -2238,17 +2213,19 @@ varchar(4) after times_watched;</code></pre>
                                 <li>Reading tables (c<span class="c1">R</span>ud)
                                 </li>
                                 <ul>
+                                  <li>Basic SQL data types</li>
                                     <li>Basic SQL Logic
                                     </li>
+                                    <li> Joins </li>
+                                    <li>Subqueries</li>
                                 </ul>
                                 <li>Writing tables (<span class="c57">C</span>r<span class="c57">UD</span>)
                                 </li>
                                 <ul>
+                                  <li>Creating tables</li>
                                     <li>Basic deletes and updates
                                     </li>
                                 </ul>
-                                <li>Best practices for writing SQL and writing tables
-                                </li>
                             </ul>
                         </div>
                         <div class="left">
@@ -2324,33 +2301,19 @@ varchar(4) after times_watched;</code></pre>
                 </section>
                 <section>
                     <h3>
-                        Survey
+                      Survey
                     </h3>
                     <p>
                         We value your feedback and are always trying to improve.
                     </p>
                     <p>
-                        Vicki Boykis vicki.boykis@gmail.com
+                        Annye Driscoll | annye.driscoll@gmail.com
                     </p>
-                    <p>
-                        vickiboykis.com | @vboykis
-                    </p>
-                    <p>
-                        <a href="http://bit.ly/gdi-sql-2" target="_blank">http://bit.ly/gdi-sql-2</a>
-                    </p>
-                </section>
-
-                <section>
-                  <h3> Thank you to the following people: </h3>
-                      <p>
-                    <a href = "http://www.saracanfield.com/">Sarah Canfield</a> - converting slides to Reveal
-                    <a href = "https://github.com/aelavender/">A.E.Lavender</a> - Sanity and syntax checks
-                  </p>
                 </section>
             </div>
             <footer>
                 <div class="copyright">
-                    Intro to SQL -- Philadelphia -- <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt=
+                    Intro to SQL | Philadelphia + Dayton | <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.en_US"><img alt=
                     "Creative Commons License" class="c60" src="http://i.creativecommons.org/l/by-nc/3.0/80x15.png"></a>
                 </div>
             </footer>
