@@ -164,7 +164,7 @@
                         </li>
                         <li>SQL education is from the "field"
                         </li>
-                        <li>Favorite movie is Return of the King, fell asleep to countless times.
+                        <li>Favorite movie is Return of the King, and I fell asleep to it countless times.
                         </li>
                     </ul>
                 </section><!-- Examples of basic html based slides -->
@@ -228,7 +228,7 @@
                                     </li>
                                 </ul>
                                 <li class="c3">
-                                    <small>Joins(Inner/Outer Left/Right)</small>
+                                    <small>Joins (Inner/Outer Left/Right)</small>
                                 </li>
                                 <li class="c3">
                                     <small>Practice</small>
@@ -243,13 +243,8 @@
                         <ul>
                             <ul>
                                 <li>
-                                    <small>Super-awesome bonus round:</small>
+                                    <small>Subqueries</small>
                                 </li>
-                                <ul>
-                                    <li class="c3">
-                                        <small>Subqueries</small>
-                                    </li>
-                                </ul>
                                 <li>
                                     <small>Practice</small>
                                 </li>
@@ -261,22 +256,16 @@
                                         <small>Creating a table</small>
                                     </li>
                                     <li>
-                                        <small>Udating a table with rows</small>
+                                        <small>Updating a table with rows</small>
                                     </li>
                                     <li>
-                                        <small>Deleting Rows</small>
-                                    </li>
-                                    <ul ul="" class="c4">
-                                        <li>
-                                            <small>vs. deleting tables</small>
-                                        </li>
-                                    </ul>
+                                        <small>Deleting rows vs. deleting tables</small>
                                 </ul>
                                 <li class="c7">
                                     <small>Optimizing queries</small>
                                 </li>
                                 <li>
-                                    <small>Resoures and links</small>
+                                    <small>Resources and links</small>
                                 </li>
                                 <li>
                                     <small>Practice</small>
@@ -475,7 +464,7 @@
                                 <span class="c1">Update</span> UPDATE, ALTER
                             </li>
                             <ul class="c12">
-                                <li>Changing specifc information in your table or your database
+                                <li>Changing specific information in your table or your database
                                 </li>
                             </ul>
                             <li>
@@ -586,17 +575,17 @@
                     </p><br>
                     <div class="c23">
                         <p class="c22">
-                            Logon site: [site]
+                            Logon site: https://demo.phpmyadmin.net
                         </p>
                         <p class="c22">
-                            Your Password: [password]
+                            Login username is "root". Leave the password field blank.
                         </p>
                     </div>
                 </section>
                 <section>
                     <h3>
-                        You should see a login screen:
-                    </h3><img src="img/php-login.png" alt="PHP login screen">
+                        Once you're in, make sure you're in the MySQL demo:
+                    </h3><img src="img/MySqlDemo.JPG" alt="Correct demo selected">
                 </section>
                 <section>
                     <h3>
@@ -610,7 +599,7 @@
                 </section>
                 <section>
                     <h3>
-                        Focusing on phpMyAdmin for the majority of the class.
+                        Focusing on PHPMyAdmin for the majority of the class.
                     </h3>
                     <p>
                         We have a test dataset of employee records we'll be using in the employee schema.
@@ -630,9 +619,6 @@
                     <p>
                         <code>employees</code> is the database and it has 6 tables.
                     </p>
-                    <p>
-                        Database/schema used interchangeably
-                    </p>
                     <p class="c26">
                         Database → Schema → Table
                     </p>
@@ -648,7 +634,7 @@
                         How to name schemas and tables
                     </h3>
                     <ul class="c12">
-                        <li>Schema / Database: <span class="c27">employees</span>
+                        <li>Database: <span class="c27">employees</span>
                         </li><br>
                         <li>Tables:
                         </li>
@@ -665,7 +651,7 @@
                     </ul><br>
                     <br>
                     <p class="c29">
-                        Usually it's bad practice to name tables the same thing as the schema (confusing), but we'll be ok with the small test data set.
+                        Usually it's bad practice to name tables the same thing as the database (confusing), but we'll be ok with the small test data set.
                     </p>
                 </section>
                 <section>
@@ -1136,26 +1122,26 @@ GROUP BY first_name, last_name;</code></pre>
                 </section>
                 <section>
                     <h3>
-                        Like statements are really useful in where clauses
+                        The LIKE operator
                     </h3>
                     <p class="c39">
-                        "Like" will pick up anything similar to what you entered.
+                        "Like" is used in a WHERE clause to search for a specific pattern.
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT last_name, COUNT( * )
 FROM employees
-WHERE last_name LIKE 'S%'
+WHERE last_name LIKE 'S%' --begins with 'S'
 GROUP BY last_name;</code></pre>
                     <div>
                         Exercises:
                         <ul>
-                            <li>What happens when you do last_name = 'S%''
+                            <li>What happens when you do last_name = 'S%'
                             </li>
-                            <li>What's the difference between like and =?
+                            <li>What's the difference between LIKE and =?
                             </li>
                             <ul>
-                                <li>Like is more like a search engine
+                                <li>Like allows for wildcards and looks for a pattern
                                 </li>
-                                <li>= means you have to have an exact match
+                                <li>= requires an exact match
                                 </li>
                             </ul>
                         </ul>
@@ -1238,7 +1224,7 @@ WHERE title LIKE '%Engineer%';</code></pre>
                                     </li>
                                 </ul>
                                 <li class="c3">
-                                    <small>Joins(Inner/Outer Left/Right)</small>
+                                    <small>Joins (Inner/Outer Left/Right)</small>
                                 </li>
                                 <li class="c3">
                                     <small>Practice</small>
@@ -1253,13 +1239,8 @@ WHERE title LIKE '%Engineer%';</code></pre>
                         <ul>
                             <ul>
                                 <li>
-                                    <small>Super-awesome bonus round:</small>
+                                    <small>Subqueries</small>
                                 </li>
-                                <ul>
-                                    <li class="c3">
-                                        <small>Subqueries</small>
-                                    </li>
-                                </ul>
                                 <li>
                                     <small>Practice</small>
                                 </li>
@@ -1271,28 +1252,19 @@ WHERE title LIKE '%Engineer%';</code></pre>
                                         <small>Creating a table</small>
                                     </li>
                                     <li>
-                                        <small>Udating a table with rows</small>
+                                        <small>Updating a table with rows</small>
                                     </li>
                                     <li>
-                                        <small>Deleting Rows</small>
-                                    </li>
-                                    <ul ul="" class="c4">
-                                        <li>
-                                            <small>v.s. deleting tables</small>
-                                        </li>
-                                    </ul>
+                                        <small>Deleting rows vs. deleting tables</small>
                                 </ul>
                                 <li class="c7">
                                     <small>Optimizing queries</small>
                                 </li>
                                 <li>
-                                    <small>Resoures and links</small>
+                                    <small>Resources and links</small>
                                 </li>
                                 <li>
                                     <small>Practice</small>
-                                </li>
-                                <li>
-                                    <small>GDI Survey</small>
                                 </li>
                             </ul>
                         </ul>
@@ -1301,19 +1273,44 @@ WHERE title LIKE '%Engineer%';</code></pre>
                 </section>
                 <section>
                     <h3>
-                        Let's connect multiple tables
+                        Quick Aside for Keys
+                    </h3>
+                    <p>
+                        Tables are joined on special fields called keys
+                    </p>
+                    <ul class="c12">
+                        <li>Primary Key (PK)
+                        </li>
+                        <ul>
+                            <li>A field (or set of fields) that uniquely identify a row
+                            </li>
+                            <!-- <li>In math speak, the minimal set of fields that the row is <span class="c48">functionally dependent</span> upon
+                            </li> -->
+                        </ul>
+                    </ul><br>
+                    <br>
+                    <ul class="c12">
+                        <li>Foreign Reference Key (FK)
+                        </li>
+                        <ul>
+                            <li>A field (or set of fields) that is a PK in some other table
+                            </li>
+                            <li>There can be multiple FK in a table
+                            </li>
+                            <li>Points to a row in another table
+                            </li>
+                        </ul>
+                    </ul>
+                </section>
+                <section>
+                    <h3>
+                        Using keys to connect tables
                     </h3>
                     <p class="c18">
                         <code>emp_no</code> is the column that's the primary key for all three tables that allows us to join them
                     </p><img src="img/join-tables.png" alt="Group by More than One Item" width="600px">
-                    <ul>
-                        <li>We join by <span class="c40">primary keys:</span> A field (or set of fields) that uniquely determine a row.
-                        </li>
-                        <li>Values in PK must be unique in table (no duplicates allowed); Only one PK per table allowed
-                        </li>
-                        <li>To <span class="c40">foreign keys:</span> A field (or set of fields) that is a PK in some other table.
-                        </li>
-                    </ul>
+                      <p>We join <span class="c40">primary keys</span> to <span class="c40">foreign keys</span>!</p>
+
                 </section>
                 <section>
                     <h3>
@@ -1610,7 +1607,7 @@ GROUP BY title</code></pre>
                         With great power comes great responsibility
                     </h3>
                     <p>
-                        You have the ability to create tables. But also to delete them by accident, to create duplicate data,or to confuse people with data.
+                        You have the ability to create tables, but also to delete them by accident, to create duplicate data, or to confuse people with data.
                     <p>
                         You have great power. <span class="c47">Use it wisely :)</span>
                     </p>
@@ -1642,19 +1639,6 @@ GROUP BY title</code></pre>
                 </section>
                 <section>
                     <h3>
-                        Now we create a table to put in the schema
-                    </h3>
-                    <p>
-                        Let's do favorite movies that we did at the beginning of the class.<br>
-                        Let's have: First Name, Favorite Movie, Number of times watched
-                    </p><img src="img/movie-table.png" alt="Create Schema" width="700px">
-                    <p>
-                        First, we need to design it a bit in our head. Which columns do we want? Which one will be the unique primary key? How do we want to
-                        name the columns?
-                    </p>
-                </section>
-                <section>
-                    <h3>
                         Things to think about when designing relational tables
                     </h3><img src="img/feather.png" alt="feather" width="564px">
                     <ol>
@@ -1668,11 +1652,8 @@ GROUP BY title</code></pre>
                 </section>
                 <section>
                     <h3>
-                        Quick Overview of Database Design
+                        Storing data as relations
                     </h3>
-                    <p>
-                        Storing the data as relations
-                    </p>
                     <ul>
                         <li>eliminates redundancy
                         </li>
@@ -1680,37 +1661,6 @@ GROUP BY title</code></pre>
                         </li>
                         <li>reduces mistakes
                         </li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>
-                        Quick Overview of Database Design
-                    </h3>
-                    <p>
-                        Tables are joined on special fields called keys
-                    </p>
-                    <ul class="c12">
-                        <li>Primary Key (PK)
-                        </li>
-                        <ul>
-                            <li>A field (or set of fields) that uniquely identify a row
-                            </li>
-                            <!-- <li>In math speak, the minimal set of fields that the row is <span class="c48">functionally dependent</span> upon
-                            </li> -->
-                        </ul>
-                    </ul><br>
-                    <br>
-                    <ul class="c12">
-                        <li>Foreign Reference Key (FK)
-                        </li>
-                        <ul>
-                            <li>A field (or set of fields) that is a PK in some other table
-                            </li>
-                            <li>There can be multiple FK in a table
-                            </li>
-                            <li>Points to a row in another table
-                            </li>
-                        </ul>
                     </ul>
                 </section>
                 <section>
@@ -1760,24 +1710,18 @@ GROUP BY title</code></pre>
                 </section>
                 <section>
                     <h3>
-                        Our movie database (with real data)
-                    </h3><img src="img/movie-table.png" alt="movie table" width="650px">
+                        What would the ideal database for our favorite movies look like?
+                    </h3>
                     <ul>
-                        <li>First Name as the Primary Key and Foreign Key?
-                        </li>
-                        <ul>
-                            <li>We can join by the name, as long as it's unique
-                            </li>
-                            <li>But our names aren't unique, so we'll create an incrementer
-                            </li>
-                        </ul>
-                        <li>First Name Should be a Character Field.
-                        </li>
-                        <li>Favorite Movie should be a character Field.
-                        </li>
-                        <li>Times Watched should be an Integer. We want to be able to add it.
-                        </li>
+<li>What tables would we want?</li>
+<li>What would we name the columns?</li>
+<li>Which ones will be the primary and foreign keys?</li>
                     </ul>
+                </section>
+                <section>
+                    <h3>
+                        Our (very simple) movie database
+                    </h3><img src="img/movie-table.png" alt="movie table" width="650px">
                 </section>
                 <section>
                     <h3>
@@ -1793,7 +1737,7 @@ GROUP BY title</code></pre>
                         How to create a table with SQL
                     </h3>
                     <p>
-                        Run in the sample place you did your select statements:
+                        Run in the same place you did your select statements:
                     </p><img src="img/sql-create.png" alt="sql create" width="800px">
                 </section>
                 <!-- <section>
@@ -1889,11 +1833,12 @@ PRIMARY KEY (emp_no);</code></pre>
                     <p>
                         Which field is the primary key?<br>
                         Which fields are numbers?<br>
-                        What's <a href="https://dev.mysql.com/doc/refman/5.7/en/enum.html">enum</a>*?<br>
+                        What's an <a href="https://dev.mysql.com/doc/refman/5.7/en/enum.html">enum</a>*?<br>
                         What's meant by "NOT NULL"?
                     </p>
                 </section>
                 <section>
+                  <h3>Constraints specify rules for data in a table.
                   <ul>
                   <li>NOT NULL - Ensures that a column cannot have a NULL value</li>
                 <li>UNIQUE - Ensures that all values in a column are different</li>
@@ -2246,7 +2191,7 @@ varchar(4) after times_watched;</code></pre>
                         Practice, practice, practice! Upload your Excel spreadsheets.
                     </p>
                     <ul>
-                        <li><a href="https://launchpad.net/test-db" target="_blank">Practice data set</a> that we used in class
+                        <li><a href="https://github.com/datacharmer/test_db" target="_blank">Practice data set</a> that we used in class
                         </li>
                     </ul>
                 </section>
