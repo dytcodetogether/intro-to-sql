@@ -867,10 +867,10 @@ SELECT * FROM employees.salaries; </code></pre>
                         Difference between distinct and *
                     </h3>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(DISTINCT title) FROM employees.titles;
-7
+6
                                 </code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(title) FROM employees.titles;
-443,308
+14,782
                                         </code></pre>
                 </section>
                 <section>
@@ -888,44 +888,40 @@ SELECT * FROM employees.salaries; </code></pre>
                         What is each one telling us?
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(title) FROM employees.titles;
-433,308
+14,782
                                 </code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.salaries;
-2,844,047
+94,917
                                         </code></pre>
 
                 </section>
                 <section>
                     <h3>
                         Which table is the largest?<br>
-                        (most records)
                     </h3>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) from employees.departments;
 9
                                 </code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.dept_emp;
-331,603
+11,050
                                         </code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.dept_manager;
 24
                                                                 </code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.employees;
-300,024
+10,000
                                                                         </code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.salaries;
-2,844,047
+94,917
                                                                                 </code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.titles;
-443,308
+14,782
                                                                                         </code></pre>
                 </section>
                 <section>
                     <h3>
-                        Three parts of SQL
-                    </h3>
-                    <p>
                         SQL clauses: required order
-                    </p>
+                    </h3>
                     <div class="c21">
                         <table class="c20">
                             <tr>
@@ -1002,45 +998,47 @@ SELECT * FROM employees.salaries; </code></pre>
                     <pre><code contenteditable="" class="sql">SELECT title, COUNT(*) FROM employees.titles
 GROUP by title;
                                 </code></pre><br>
-                    <img src="img/titles-and-salaries.png" alt="Select Columns">
                 </section>
                 <section>
                     <h3>
                         More group by examples
                     </h3>
-                    <pre><code contenteditable="" class="sql">SELECT dept_name, COUNT(*) FROM departments
+                    <pre><code contenteditable="" class="sql">SELECT dept_name, COUNT(*) FROM employees.departments
 GROUP BY dept_name;
                                                 </code></pre><br>
-                    <img src="img/more-group-by-examples.png" alt="Select Columns" width="250px">
-                    <p>
-                        How many instances of that department are there in that table?
-                    </p>
                 </section>
                 <section>
                     <h3>
-                        Group by more than one item: making smaller groups
-                    </h3><img src="img/group-by-more-than-one-item.png" alt="Group by More than One Item">
+                        Group by more than one item:
+                    </h3>
+                    <pre><code contenteditable="" class="sql">SELECT first_name, COUNT(*)
+FROM employees.employees
+GROUP BY first_name</code></pre><br>
+<pre><code contenteditable="" class="sql">SELECT first_name, last_name, COUNT(*)
+  FROM employees.employees
+  GROUP BY first_name, last_name</code></pre><br>
                 </section>
                 <section>
                     <h4>
                         Let's try some exercises that combine COUNT(*), DISTINCT and GROUP BY
                     </h4>
-                    <h6>
+                    <p>
                         How many unique salaries does each employee have? (how many times have they been given raises?)
-                    </h6>
+                    </p>
                     <pre><code contenteditable="" class="sql">SELECT emp_no, COUNT(DISTINCT salary)
-FROM salaries
+FROM employees.salaries
 GROUP BY emp_no;
 </code></pre>
-                    <h6>
+                    <p>
                         How many managers has each department had?
-                    </h6>
-                    <pre><code contenteditable="" class="sql">SELECT dept_no, COUNT(emp_no) FROM dept_manager
+                    </p>
+                    <pre><code contenteditable="" class="sql">SELECT dept_no, COUNT(emp_no)
+                      FROM employees.dept_manager
 GROUP BY dept_no;
 </code></pre>
-                    <h6>
+                    <p>
                         How many people that were born on the same day, have the same first name?
-                    </h6>
+                    </p>
                     <pre><code contenteditable="" class="sql">SELECT birth_date,first_name, COUNT(*) FROM employees.employees
 GROUP BY birth_date, first_name;</code></pre>
                 </section>
@@ -1050,18 +1048,10 @@ GROUP BY birth_date, first_name;</code></pre>
                         maximum and minimum
                     </h3>
                     <p>
-                        When was your youngest employee born? (i.e. are you following labor laws?)
-                    </p>
-                    <pre><code contenteditable="" class="sql"> SELECT MAX(birth_date) FROM employees;</code></pre>
-                    <div align="left">
-                        <p class="c29">
-                            In this case, you don't need the group-by statement since you're not counting groups of people, but looking at the whole table
-                        </p>
-                    </div><br>
-                    <p>
                         Which title has been around the longest?(Smallest employee number)
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT title, MIN(emp_no) from titles
+                    <pre><code contenteditable="" class="sql">SELECT title, MIN(emp_no)
+                      FROM employees.titles
 GROUP BY title;</code></pre>
                 </section>
                 <section>
@@ -1069,7 +1059,7 @@ GROUP BY title;</code></pre>
                         Order by: Sorts by the terms you want
                     </h3>
                     <p class="c29">
-                        Will sort by first name ascending, unless you specify desc.
+                        Will sort by ascending by default.
                     </p>
                     <pre><code contenteditable="" class="sql">
 SELECT first_name, gender, COUNT(*)
@@ -1175,45 +1165,9 @@ ORDER BY salary DESC;
                     <p>
                         You only want to select certain things.
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT first_name, last_name, COUNT(*)
+                    <pre><code contenteditable="" class="sql">SELECT first_name, last_name
 FROM employees.employees
-WHERE first_name='Adam'
-GROUP BY first_name, last_name;</code></pre>
-                    <table class="c38">
-                        <tr>
-                            <th class="c36">
-                                first_name
-                            </th>
-                            <th class="c36">
-                                last_name
-                            </th>
-                            <th class="c36">
-                                COUNT(*)
-                            </th>
-                        </tr>
-                        <tr>
-                            <td class="c37">
-                                Adam
-                            </td>
-                            <td class="c37">
-                                Alpin
-                            </td>
-                            <td class="c37">
-                                1
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="c37">
-                                Adam
-                            </td>
-                            <td class="c37">
-                                Alvarado
-                            </td>
-                            <td class="c37">
-                                1
-                            </td>
-                        </tr>
-                    </table>
+WHERE first_name='Adam';</code></pre>
                 </section>
                 <section>
                     <h3>
@@ -1223,56 +1177,71 @@ GROUP BY first_name, last_name;</code></pre>
                         "Like" is used in a WHERE clause to search for a specific pattern.
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT last_name, COUNT( * )
-FROM employees
-WHERE last_name LIKE 'S%' --begins with 'S'
+FROM employees.employees
+WHERE last_name LIKE 'S%' -- begins with 'S'
 GROUP BY last_name;</code></pre>
                     <div>
                         Exercises:
                         <ul>
-                            <li>What happens when you do last_name = 'S%'
+                            <li>What happens when you do last_name = 'S%'?
+                            </li>
+                            <li>What happens when you do last_name LIKE '%S%'?
                             </li>
                             <li>What's the difference between LIKE and =?
                             </li>
-                            <ul>
-                                <li>Like allows for wildcards and looks for a pattern
-                                </li>
-                                <li>= requires an exact match
-                                </li>
-                            </ul>
                         </ul>
                     </div>
+                </section>
+                <section>
+                    <h3>
+                        Not restricted to = and LIKE in WHERE clauses:
+                    </h3>
+                    <ul>
+                      <li>&lt;&gt; or != : Not equal</li>
+                      <li>&gt; : Greater than</li>
+                      <li>&lt;</li>
+                      <li>BETWEEN : Between a certain range (WHERE column_name BETWEEN value1 AND value2;)</li>
+                      <li>IN : Specify mutiple values for a column (WHERE column_name IN (value1, value2, ...);)</li>
+                      </ul>
+
+                </section>
+                <section>
+                    <h3>
+                        Not restricted to one condition:
+                    </h3>
+                    <p>AND: Pulls a record if all the conditions separated by AND are TRUE</p>
+                    <li>WHERE condition1 AND condition2 AND condition3 ...;</li>li
+                    <p>OR : Pulls a record if any of the conditions separated by OR is TRUE</p>
+                    <li>WHERE condition1 OR condition2 OR condition3 ...;</li>
                 </section>
                 <section>
                     <h3>
                         Where clause exercises
                     </h3>
                     <p>
-                        Only all people named Mary
+                        All people named Mary or Elvis:
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT * FROM employees
-WHERE first_name='Mary';</code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT * FROM employees.employees
+WHERE first_name IN ('Mary', 'Elvis');</code></pre>
+                    <pre><code contenteditable="" class="sql">SELECT * FROM employees.employees
+WHERE first_name = 'Mary' OR first_name = 'Elvis';</code></pre>
                     <p>
-                        Only all of the engineers
+                         All of the engineers before 2000:
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT * FROM employees.titles
-WHERE title LIKE '%Engineer%';</code></pre>
+WHERE title LIKE '%Engineer%' AND from_date < '2000-01-01';</code></pre>
                 </section>
                 <section>
-                    <h3>
-                        A couple of things to note about greater/less than/equal to
-                    </h3>
-                    <pre><code contenteditable="" class="sql"> WHERE number &gt;='5'; --returns (5,6,7,8...)</code></pre>
-                    <pre><code contenteditable="" class="sql"> WHERE number &gt; '5'; --returns (6,7,8...)</code></pre>
-                    <pre><code contenteditable="" class="sql"> WHERE day &lt;= '2017-01-01'; --returns (Jan 1, Dec. 31, Dec. 30…)</code></pre>
-                    <pre><code contenteditable="" class="sql"> WHERE day &lt; '2017-01-01'; --returns (Dec. 31, Dec. 30…)</code></pre>
-                    <pre><code contenteditable="" class="sql"> WHERE day != '2017-01-01'; --returns anything other than Jan 1</code></pre>
+                    <h2>
+                        Break!
+                    </h2><img src="img/cat_stretch.jpg" alt="kitty!">
                 </section>
                 <section>
                     <h3>
                         Cooking with the good suff: joins
                     </h3>
                     <p>
-                        One table is great. But the power of SQL comes from being able to join related tables to get information.
+                        One table is great, but the power of SQL comes from being able to join related tables to get information.
                     </p><img src="img/join-guys.png" alt="Group by More than One Item" width="600px">
                 </section>
                 <section>
@@ -1365,6 +1334,37 @@ WHERE title LIKE '%Engineer%';</code></pre>
                         </ul>
                     </div>
                     <div class="left c8"></div>
+                </section>
+                <section>
+                    <h3>
+                        Primary and Foreign Keys
+                    </h3>
+                    <p>
+                        Tables are joined on special fields called keys
+                    </p>
+                    <ul class="c12">
+                        <li>Primary Key (PK)
+                        </li>
+                        <ul>
+                            <li>A field (or set of fields) that uniquely identify a row
+                            </li>
+                            <!-- <li>In math speak, the minimal set of fields that the row is <span class="c48">functionally dependent</span> upon
+                            </li> -->
+                        </ul>
+                    </ul><br>
+                    <br>
+                    <ul class="c12">
+                        <li>Foreign Reference Key (FK)
+                        </li>
+                        <ul>
+                            <li>A field (or set of fields) that is a PK in some other table
+                            </li>
+                            <li>There can be multiple FK in a table
+                            </li>
+                            <li>Points to a row in another table
+                            </li>
+                        </ul>
+                    </ul>
                 </section>
                 <section>
                     <h3>
@@ -1493,8 +1493,14 @@ JOIN employees.salaries b ON a.emp_no = b.emp_no</code></pre>
                         Another join example
                     </h3>
                     <p>
-                        When you have two columns from different tables with the same name, you have to reference them specifically.
-                    </p><img src="img/another-join-example.png" alt="Group by More than One Item">
+                        When you have two columns from different tables with the same name, you have to reference them specifically with the alias.
+                    </p>
+                    <pre><code contenteditable="" class="sql">SELECT a.first_name, a.last_name, a.hire_date, b.salary, b.from_date, b.to_date, c.title, c.from_date, c.to_date
+FROM employees.employees a
+JOIN employees.salaries b
+ON a.emp_no = b.emp_no
+JOIN employees.titles c
+ON a.emp_no = c.emp_no</code></pre>
                 </section>
                 <section>
                     <h3 class="c43">
@@ -1516,7 +1522,7 @@ JOIN employees.salaries b ON a.emp_no = b.emp_no</code></pre>
                     </p><br>
                     <pre><code contenteditable="" class="sql">SELECT first_name, last_name, hire_date,title, c.from_date, c.to_date
 FROM employees.employees a
-LEFT JOIN titles c ON a.emp_no = c.emp_no;</code></pre>
+LEFT JOIN employees.titles c ON a.emp_no = c.emp_no;</code></pre>
                     <p class="c44">
                         What if you'd done a right join instead?
                     </p>
@@ -1528,13 +1534,13 @@ LEFT JOIN titles c ON a.emp_no = c.emp_no;</code></pre>
                     <p class="c45">
                         What is this query telling us?
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT first_name, last_name,a.emp_no, hire_date,
-COUNT(DISTINCT title) , COUNT(DISTINCT salary)
+                    <pre><code contenteditable="" class="sql">SELECT first_name, last_name, a.emp_no, hire_date,
+COUNT(DISTINCT title), COUNT(DISTINCT salary)
 FROM employees.employees a
 JOIN employees.salaries b ON a.emp_no = b.emp_no
 JOIN employees.titles c ON a.emp_no = c.emp_no
 where first_name like 'A%'
-GROUP BY first_name, last_name, hire_date,a.emp_no;</code></pre><img src="img/all-in-table.png" alt="All in table">
+GROUP BY first_name, last_name, hire_date, a.emp_no;</code></pre>
                 </section>
                 <section>
                     <h3>
@@ -1543,16 +1549,14 @@ GROUP BY first_name, last_name, hire_date,a.emp_no;</code></pre><img src="img/al
                     <p>
                         What is this query bring back?
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT first_name, last_name,hire_date,a.emp_no, salary, from_date as
+                    <pre><code contenteditable="" class="sql">SELECT first_name, last_name, hire_date, a.emp_no, salary, from_date as
 salary_start_date, to_date AS salary_end_date
 FROM employees.employees a
 JOIN employees.salaries b ON a.emp_no = b.emp_no
-WHERE salary &gt;60000
-AND from_date &gt;'2000-01-01'
-ORDER BY last_name</code></pre>
-                    <p class="c46">
-                        Anyone whose salary is greater than $60,000 and who was hired after 1/1/2000
-                    </p>
+WHERE salary &gt; 60000
+AND from_date &gt; '2000-01-01'
+ORDER BY last_name
+</code></pre>
                 </section>
                 <section>
                     <h2>
@@ -1595,21 +1599,20 @@ ORDER BY last_name</code></pre>
                         </li>
                         <pre><code contenteditable="" class="sql">SELECT COUNT(DISTINCT emp_no)
 FROM employees.employees;</code></pre>
-                        <li>How many people got raises in 1999?
+                        <li>How many people got raises in 1996?
                         </li>
-                        <pre><code contenteditable="" class="sql"> SELECT * from (
+                        <pre><code contenteditable="" class="sql">SELECT * from (
         SELECT emp_no, COUNT(*) AS number_of_salaries
-        FROM salaries
-        WHERE from_date&gt;'1998-01-01'
-        AND from_date&lt;'2000-01-01'
+        FROM employees.salaries
+        WHERE from_date BETWEEN '1996-01-01' AND '1997-01-01'
         GROUP BY emp_no) a
-        WHERE number_of_salaries &gt;1</code></pre>
+        WHERE number_of_salaries &gt; 1</code></pre>
                         <li>What's the most common job title we have?
                         </li>
                         <pre><code contenteditable="" class="sql">SELECT title, COUNT(DISTINCT a.emp_no)
-FROM titles a
-JOIN employees b
-ON a.emp_no=b.emp_no
+FROM employees.titles a
+JOIN employees.employees b
+ON a.emp_no = b.emp_no
 GROUP BY title</code></pre>
                     </ul>
                 </section>
@@ -1625,12 +1628,6 @@ GROUP BY title</code></pre>
                         </li>
                         <li>How much money did non-engineers make?
                         </li>
-                        <li>Extra-hard question:
-                        </li>
-                        <ul>
-                            <li>How many women engineers got raises in 2000 versus male engineer, and who were their managers?
-                            </li>
-                        </ul>
                     </ul>
                 </section>
                 <section>
@@ -1662,9 +1659,6 @@ GROUP BY title</code></pre>
                     <p>
                         Now that you see how powerful SQL is, let's make some tables of our own. What if we have tons of data we want to query?
                     </p>
-                    <p>
-                        Or we want to join our Excel tables to other data?
-                    </p>
                 </section>
                 <section>
                     <h3>
@@ -1676,7 +1670,7 @@ GROUP BY title</code></pre>
                         You have great power. <span class="c47">Use it wisely :)</span>
                     </p>
                 </section>
-                <section>
+                <!-- <section>
                     <h3>
                         Databases, schemas, and tables
                     </h3>
@@ -1687,19 +1681,20 @@ GROUP BY title</code></pre>
                     <p>
                         Excel File → Workbook → Row → Cell
                     </p>
-                </section>
+                </section> -->
                 <section>
                     <h3>
-                        First we create our schema
+                        First we create our database
                     </h3>
+                    <pre><code contenteditable="" class="sql">CREATE DATABASE annye</code></pre>
                     <p>
-                        Name it with your first name or something easy you can remember; You'll have to keep typing it, so under 10 characters is optimal
-                    </p><img src="img/schema-create.png" alt="Create Schema">
+                        Name it with your first name or something easy you can remember. You'll have to keep typing it, so under 10 characters is optimal.
+                        </p>
                 </section>
                 <section>
                     <h3>
-                        And you should see it show up:
-                    </h3><img src="img/schema-result.png" alt="Create Schema" width="700px">
+                        And you should see it show up!
+                    </h3>
                 </section>
                 <section>
                     <h3>
@@ -1787,7 +1782,7 @@ GROUP BY title</code></pre>
                         Our (very simple) movie database
                     </h3><img src="img/movie-table.png" alt="movie table" width="650px">
                 </section>
-                <section>
+                <!-- <section>
                     <h3>
                         Two ways to execute in MySQL: PHPMyAdmin and command line
                     </h3><img src="img/two-ways-to-exec-sql.png" alt="two ways to execute sql" width="800px">
@@ -1795,7 +1790,7 @@ GROUP BY title</code></pre>
                         For the second half of the class we'll be working with commands more than the UI, but there is usually more than 1 way to do everything
                         in MySQL.
                     </p>
-                </section>
+                </section> -->
                 <section>
                     <h3>
                         How to create a table with SQL
@@ -1902,13 +1897,12 @@ PRIMARY KEY (emp_no);</code></pre>
                     </p>
                 </section>
                 <section>
-                  <h3>Constraints specify rules for data in a table.
+                  <h3>Constraints specify rules for data in a table.</h3>
                   <ul>
                   <li>NOT NULL - Ensures that a column cannot have a NULL value</li>
                 <li>UNIQUE - Ensures that all values in a column are different</li>
                 <li>PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table</li>
                 <li>FOREIGN KEY - Uniquely identifies a row/record in another table</li>
-                <li>CHECK - Ensures that all values in a column satisfies a specific condition</li>
                 <li>DEFAULT - Sets a default value for a column when no value is specified</li>
                 <li>INDEX - Used to create and retrieve data from the database very quickly</li>
               </ul>
@@ -1959,7 +1953,7 @@ SELECT COUNT(*) FROM annye.moviesample;</code></pre>
                     </p>
                     <pre><code contenteditable="" class="sql">INSERT INTO
 yourname.tablename (first_name, favorite_movie, times_watched) -- column names
-VALUES ('Jasmine', 'Aladdin', '456'); --column values </code></pre>
+VALUES ('Jasmine', 'Aladdin', '456'); -- column values </code></pre>
                 </section>
                 <section>
                     <h3>
@@ -1982,7 +1976,7 @@ VALUES ('Alice','Alice in Wonderland', 5);</code></pre>
 (first_name, favorite_movie,times_watched)
 VALUES ('Annye', 'Return of the King', '20');
 
-INSERT INTO annye.movie_sample
+INSERT INTO annye.moviesample
 (first_name, favorite_movie,times_watched)
 VALUES ('Jasmine', 'Aladdin','456'); </code></pre>
                 </section>
@@ -2020,8 +2014,6 @@ FROM yourname.moviesample
 GROUP BY favorite_movie
 ORDER BY COUNT(DISTINCT first_name) DESC;</code></pre>
                     <ul>
-                        <li>What's the most popular initial this Saturday?
-                        </li>
                         <li>How many times was the most someone watched a movie?
                         </li>
                         <li>How many movies have 'The' in the title?
@@ -2035,29 +2027,28 @@ ORDER BY COUNT(DISTINCT first_name) DESC;</code></pre>
                         Now, let's make another table
                     </h3>
                     <p>
-                        We want to see which decade was most popular among GDI members. This one has the data for the movie name and the year it was made.
+                        We want to see which decade was most popular among GDI members. This one will have the data for the movie name and the year it was made.
                     </p><img src="img/another-table.png" alt="another table">
                 </section>
                 <section>
                     <h3>
-                        How do we add the rest of the data?
+                        How do we add the movie year data?
                     </h3>
+                    <pre><code contenteditable="" class="sql">INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);</code></pre>
+                    </section>
+                    <section>
+                      <h3>
+                        Analyzing our tables
+                        </h3>
                     <pre><code contenteditable="" class="sql">SELECT * FROM annye.moviesample a
 JOIN annye.movie_year b
-ON a.movie_title=b.movie_title</code></pre>
+ON b.movie_title = a.favorite_movie</code></pre>
                     <ul>
                         <li>What happens when you have two fields with the same name in your select statement?
                         </li>
                         <li>What would be a better field to join on?
                         </li>
-                        <li>What's the year with the most popular movies?
-                        </li>
-                        <li>And, what's the decade with the most popular movies? Hint: Take the first three digits of the year
-                        </li>
-                        <ul class="c53">
-                            <li class="c52">select left(year_released,3), count(*) from..
-                            </li>
-                        </ul>
                     </ul>
                 </section>
                 <section>
