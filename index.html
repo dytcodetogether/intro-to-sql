@@ -7,7 +7,7 @@
             Intro to SQL - Annye Driscoll
         </title>
         <meta name="description" content=
-        "Girl Develop It framework for easily creating beautiful presentations using HTML in GDI theme. Forked from Hakim El Hattab's reveal.js">
+        "Girl Develop It Intro to SQL course">
         <meta name="author" content="Girl Develop It">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -901,23 +901,17 @@ SELECT * FROM employees.salaries; </code></pre>
                         Which table is the largest?<br>
                     </h3>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) from employees.departments;
-9
-                                </code></pre>
+9</code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.dept_emp;
-11,050
-                                        </code></pre>
+11,050</code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.dept_manager;
-24
-                                                                </code></pre>
+24</code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.employees;
-10,000
-                                                                        </code></pre>
+10,000</code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.salaries;
-94,917
-                                                                                </code></pre>
+94,917</code></pre>
                     <pre><code contenteditable="" class="sql">SELECT COUNT(*) FROM employees.titles;
-14,782
-                                                                                        </code></pre>
+14,782</code></pre>
                 </section>
                 <section>
                     <h3>
@@ -1034,13 +1028,14 @@ GROUP BY emp_no;
                         How many managers has each department had?
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT dept_no, COUNT(emp_no)
-                      FROM employees.dept_manager
+FROM employees.dept_manager
 GROUP BY dept_no;
 </code></pre>
                     <p>
                         How many people that were born on the same day, have the same first name?
                     </p>
-                    <pre><code contenteditable="" class="sql">SELECT birth_date,first_name, COUNT(*) FROM employees.employees
+                    <pre><code contenteditable="" class="sql">SELECT birth_date,first_name, COUNT(*)
+FROM employees.employees
 GROUP BY birth_date, first_name;</code></pre>
                 </section>
                 <section>
@@ -1052,7 +1047,7 @@ GROUP BY birth_date, first_name;</code></pre>
                         Which title has been around the longest?(Smallest employee number)
                     </p>
                     <pre><code contenteditable="" class="sql">SELECT title, MIN(emp_no)
-                      FROM employees.titles
+FROM employees.titles
 GROUP BY title;</code></pre>
                 </section>
                 <section>
@@ -1200,9 +1195,11 @@ GROUP BY last_name;</code></pre>
                     <ul>
                       <li>&lt;&gt; or != : Not equal</li>
                       <li>&gt; : Greater than</li>
-                      <li>&lt;</li>
-                      <li>BETWEEN : Between a certain range (WHERE column_name BETWEEN value1 AND value2;)</li>
-                      <li>IN : Specify mutiple values for a column (WHERE column_name IN (value1, value2, ...);)</li>
+                      <li>&lt; : Less than</li>
+                      <li>BETWEEN : Between a certain range </li>
+                        <pre><code contenteditable="" class="sql">WHERE column_name BETWEEN value1 AND value2;</code></pre>
+                      <li>IN : Specify mutiple values for a column</li>
+                      <pre><code contenteditable="" class="sql">WHERE column_name IN (value1, value2, ...);</code></pre>
                       </ul>
 
                 </section>
@@ -1210,10 +1207,12 @@ GROUP BY last_name;</code></pre>
                     <h3>
                         Not restricted to one condition:
                     </h3>
-                    <p>AND: Pulls a record if all the conditions separated by AND are TRUE</p>
-                    <li>WHERE condition1 AND condition2 AND condition3 ...;</li>li
-                    <p>OR : Pulls a record if any of the conditions separated by OR is TRUE</p>
-                    <li>WHERE condition1 OR condition2 OR condition3 ...;</li>
+                    <ul>
+                      <li>AND: Pulls a record if all the conditions separated by AND are TRUE</li>
+                      <pre><code contenteditable="" class="sql">WHERE condition1 AND condition2 AND condition3 ...;</code></pre>
+                      <li>OR : Pulls a record if any of the conditions separated by OR is TRUE</li>
+                      <pre><code contenteditable="" class="sql">WHERE condition1 OR condition2 OR condition3 ...;</code></pre>
+                    </ul>
                 </section>
                 <section>
                     <h3>
@@ -1561,7 +1560,7 @@ ORDER BY last_name
                 </section>
                 <section>
                     <h2>
-                        Break!
+                        (Longer) Break!
                     </h2><img src="img/cat_stretch.jpg" alt="kitty!">
                 </section>
                 <section>
@@ -2056,20 +2055,22 @@ ON b.movie_title = a.favorite_movie</code></pre>
                     <h3>
                         <span class="c54">Deleting</span> SQL Values
                     </h3>
-                    <div class="c17">
+                    <div>
                         <p>
                             What kind of issues do you see arising from wrong data entry?
                         </p>
                         <p>
                             This is the part where you have to be really careful. Most users won't have access to delete tables.
                         </p>
-                        <p>
-                            <span class="c55">truncate table:</span> Leaves the table structure intact, just deletes the values. (Like deleting all values in a
+                        <ul>
+                        <li>
+                            <span class="c55">truncate table</span>: Leaves the table structure intact, just deletes the values. (Like deleting all values in a
                             spreadsheet, but keeping the Excel file.)
-                        </p><br>
-                        <p class="c55">
-                            drop table: Deletes EVERYTHING. BADBADBAD. (file goes in the trash)
-                        </p>
+                        </li>
+                        <li>
+                            <span class="c55">drop table</span>: Deletes EVERYTHING. BADBADBAD. (file goes in the trash)
+                        </li>
+                        </ul>
                     </div><img src="https://s-media-cache-ak0.pinimg.com/originals/19/d2/0a/19d20a7c0bd91a4ffd16b84ed4b64ca2.jpg" alt="Grumpy Cat no" width=
                     "250px">
                 </section>
@@ -2081,7 +2082,7 @@ ON b.movie_title = a.favorite_movie</code></pre>
                         Easy way in UI: The delete button. Be careful!
                     </p><img src="img/dropping-rows.png" alt="dropping rows" width="700px">
                     <p>SQL can be much more accurate:</p>
-                    <code>DELETE FROM annye.moviesample WHERE first_name='Shrek';</code>
+                    <pre><code contenteditable="" class="sql">DELETE FROM annye.moviesample WHERE first_name = 'Shrek';</code></pre>
                 </section>
                 <section>
                     <h3>
@@ -2112,7 +2113,7 @@ WHERE times_watched &gt;= '500'; </code></pre>
                             <code>UPDATE</code> is to change specific data entries
                         </li><br>
                         <ul>
-                            <pre><code contenteditable="" class="sql">UPDATE moviesample
+                            <pre><code contenteditable="" class="sql">UPDATE annye.moviesample
 SET first_name = 'Chihiro', times_watched = 3
 WHERE movie = 'Spirited Away';</code></pre>
                             <p>
@@ -2140,13 +2141,13 @@ WHERE movie = 'Spirited Away';</code></pre>
                         </li><br>
                         <ul>
                             <pre><code contenteditable="" class="sql">ALTER TABLE icecream DROP COLUMN flavor;
-ALTER TABLE icecream ADD unique (quantity);
+ALTER TABLE icecream ADD UNIQUE (quantity);
 ALTER TABLE icecream MODIFY flavor VARCHAR(35);</code></pre>
                             <p>
                                 Try it now:
                             </p>
                             <pre><code contenteditable="" class="sql">ALTER TABLE annye.moviesample ADD COLUMN release_yr
-varchar(4) after times_watched;</code></pre>
+VARCHAR(4) AFTER times_watched;</code></pre>
                         </ul>
                     </ul>
                 </section>
@@ -2204,7 +2205,7 @@ varchar(4) after times_watched;</code></pre>
                                 </li>
                                 <ul>
                                   <li>Basic SQL data types</li>
-                                    <li>Basic SQL Logic
+                                    <li>Basic SQL logic
                                     </li>
                                     <li> Joins </li>
                                     <li>Subqueries</li>
@@ -2230,16 +2231,14 @@ varchar(4) after times_watched;</code></pre>
                     </h3>
                     <ul>
                       <li>
-                          <a href="https://www.w3schools.com/sql/default.asp" target="_blank">W3 Schools</a>
-                          Great for learning or just for checking syntax - includes coding exercises on every page.
+                          <a href="https://www.w3schools.com/sql/default.asp" target="_blank">W3 Schools</a> : Great for learning or just for checking syntax - includes coding exercises on every page.
                       </li>
                         <li>
-                            <a href="https://learncodethehardway.org/sql/" target="_blank">Learn SQL The Hard Way</a> Comes highly recommended, and not hard
+                            <a href="https://learncodethehardway.org/sql/" target="_blank">Learn SQL The Hard Way</a> : Comes highly recommended, and not hard
                             at all
                         </li>
                         <li>
-                            <a href="http://www.codinghorror.com/blog/2007/10/a-visual-explanation-of-sql-joins.html" target="_blank">Visualizing SQL Joins</a>
-                            Awesome blog post for simplifying joins
+                            <a href="http://www.codinghorror.com/blog/2007/10/a-visual-explanation-of-sql-joins.html" target="_blank">Visualizing SQL Joins</a> : Awesome blog post for simplifying joins
                         </li>
                     </ul><br>
                     <br>
