@@ -164,7 +164,7 @@
                         </li>
                         <li>SQL education is from the "field"
                         </li>
-                        <li>Favorite movie is Return of the King, and I fell asleep to it countless times.
+                        <li>Favorite movie is Return of the King, watched 20 times.
                         </li>
                     </ul>
                 </section><!-- Examples of basic html based slides -->
@@ -173,15 +173,15 @@
                         What to expect from the class
                     </h3>
                     <ul>
-                        <li>This is a complement to the database design class
+                        <li>This is a complement to the database design class.
                         </li>
-                        <li>We'll be using the same terminology and building on those concepts
+                        <li>We'll be using the same terminology and building on those concepts...
                         </li>
-                        <li>But we'll be hands-on
+                        <li>...but we'll be hands-on!
                         </li>
                     </ul><img src="https://media.giphy.com/media/Dkp3uyouK71xm/giphy.gif" alt="Jim Jazz Hands" width="400px">
                     <p>
-                        By the end of the class, you will be able to query and modify a SQL table to make sense of the data you have in a relational way.
+                        By the end of the class, you will be able to query and modify a SQL table to make sense of the data you have.
                     </p>
                 </section>
                 <section>
@@ -306,9 +306,9 @@
           </p>
         </section>
 
-        <section>
+        <!-- <section>
           <span class="c1">CRUD (Create, Read, Update, Delete):</span> How you change the databases and tables in the database
-</section>
+</section> -->
 <section>
   <h3>Our database model of choice</h3>
   <p><b>Relational database</b> = organizes data into one or more tables of columns and rows with a unique key identifying each row (record).</p>
@@ -332,7 +332,37 @@
 												</ul>
 										</div>
 								</section>
-
+                <section>
+                    <h3>
+                        Primary and Foreign Keys
+                    </h3>
+                    <p>
+                        Tables are joined on special fields called keys
+                    </p>
+                    <ul class="c12">
+                        <li>Primary Key (PK)
+                        </li>
+                        <ul>
+                            <li>A field (or set of fields) that uniquely identify a row
+                            </li>
+                            <!-- <li>In math speak, the minimal set of fields that the row is <span class="c48">functionally dependent</span> upon
+                            </li> -->
+                        </ul>
+                    </ul><br>
+                    <br>
+                    <ul class="c12">
+                        <li>Foreign Reference Key (FK)
+                        </li>
+                        <ul>
+                            <li>A field (or set of fields) that is a PK in some other table
+                            </li>
+                            <li>There can be multiple FK in a table
+                            </li>
+                            <li>Points to a row in another table
+                            </li>
+                        </ul>
+                    </ul>
+                </section>
                 <!-- <section>
                     <h3>
                         Databases, schemas, and tables
@@ -369,9 +399,9 @@
                         </ul>
                     </div><br>
                     <ul>
-                        <li>It's the language that the database speaks to bring you back data
+                        <li>SQL is the language that the database speaks to get data, modify data, and modify the database.
                         </li><br>
-                        <li>Has a lot of words similar to English, but they have their own meaning as key words
+                        <li>SQL has a lot of words similar to English, but they have their own meaning as keywords.
                         </li><br>
                         <li>Like Siri or Alexa
                         </li><br>
@@ -428,15 +458,14 @@
                 </section>
                 <section>
                     <h3>
-                        Databases, schemas, and tables
+                        A multi-functional language
                         </h3>
                     <ul>
                         <li>
                             <span class="c16">Reading</span> tables you or other people wrote
                         </li><br>
                         <li>
-                            <span class="c16">Modifying</span> those tables to add your own information and/or creating your own tables to read from CSV files, other
-                            SQL tables, and other systems.
+                            <span class="c16">Modifying</span> those tables to add your own information and/or creating your own tables and data
                         </li><br>
                     </ul>
                 </section>
@@ -479,7 +508,98 @@
                 </section>
                 <section>
                     <h3>
-                        What can you do with SQL?
+                        Plan for the day: CRUD
+                    </h3>
+                    <div id="column1" class="c5">
+                        <h3 class="c2">
+                            <small>Pre-break: c<span class="c1">R</span>ud</small>
+                        </h3>
+                        <ul>
+                            <li>
+                                <p>
+                                    <small>What's a database? What's SQL?</small>
+                                </p>
+                            </li>
+                            <li>
+                                <small>How to query a database:</small>
+                            </li>
+                            <ul>
+                                <li class="c3">
+                                    <small>Select statement (from statement)</small>
+                                </li>
+                                <ul class="c4">
+                                    <li>
+                                        <small>Select, Distinct</small>
+                                    </li>
+                                    <li>
+                                        <small>Count</small>
+                                    </li>
+                                </ul>
+                                <li class="c3">
+                                    <small>Group By, Order By</small>
+                                </li>
+                                <li class="c3">
+                                    <small>Clauses</small>
+                                </li>
+                                <ul class="c4">
+                                    <li>
+                                        <small>Where</small>
+                                    </li>
+                                    <li>
+                                        <small>Like</small>
+                                    </li>
+                                </ul>
+                                <li class="c3">
+                                    <small>Joins (Inner/Outer Left/Right)</small>
+                                </li>
+                                <li class="c3">
+                                    <small>Practice</small>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div id="column2" class="c5">
+                        <h3 class="c2">
+                            <small>Post-break: <span class="c1">C</span>r<span class="c1">UD</span></small>
+                        </h3>
+                        <ul>
+                            <ul>
+                                <li>
+                                    <small>Subqueries</small>
+                                </li>
+                                <li>
+                                    <small>Practice</small>
+                                </li>
+                                <li>
+                                    <small>How to modify a database</small>
+                                </li>
+                                <ul class="c6">
+                                    <li>
+                                        <small>Creating a table</small>
+                                    </li>
+                                    <li>
+                                        <small>Updating a table with rows</small>
+                                    </li>
+                                    <li>
+                                        <small>Deleting rows vs. deleting tables</small>
+                                </ul>
+                                <li class="c7">
+                                    <small>Optimizing queries</small>
+                                </li>
+                                <li>
+                                    <small>Resources and links</small>
+                                </li>
+                                <li>
+                                    <small>Practice</small>
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="left c8"></div>
+                </section>
+                <section>
+                    <h3>
+                        What can you do with SQL - Reading!
                     </h3>
                     <p class="c18">
                         The power is in the relationship between data sets.
@@ -568,14 +688,14 @@
                         We'll use MySQL, a popular version of SQL.
                     </p>
                     <p>
-                        If you've done anything online, chances are the transation went through MySQL (Walmart, Kayak, Facebook, Etsy, Verizon)
+                        If you've done anything online, chances are the transation went through MySQL (Walmart, Kayak, Facebook, Etsy, Verizon).
                     </p><br>
                     <p>
-                        We'll log on to the front-end of MySQL, PHPMYAdmin.
+                        We'll log on to the front-end of MySQL, PHPMyAdmin.
                     </p><br>
                     <div class="c23">
                         <p class="c22">
-                            Logon site: https://demo.phpmyadmin.net
+                            Logon site: https://demo.phpmyadmin.net/STABLE/
                         </p>
                         <p class="c22">
                             Login username is "root". Leave the password field blank.
@@ -592,17 +712,17 @@
                         How PHPMyAdmin Works
                     </h3><img src="img/php-abstraction.png" alt="PHP abstraction">
                 </section>
-                <section>
+                <!-- <section>
                     <h3>
                         Two ways to execute in MySQL: PHPMyAdmin and command line
                     </h3><img src="img/ways-to-execute.png" alt="PHP abstraction" width="900px">
-                </section>
+                </section> -->
                 <section>
                     <h3>
-                        Focusing on PHPMyAdmin for the majority of the class.
+                        We have test data we can learn with!
                     </h3>
                     <p>
-                        We have a test dataset of employee records we'll be using in the employee schema.
+                        Already loaded are a bunch of employee records we'll be using together.
                     </p><img src="img/options.png" alt="Options" width="850px">
                 </section>
                 <section>
@@ -631,7 +751,7 @@
                 </section>
                 <section>
                     <h3>
-                        How to name schemas and tables
+                        How to access specific tables
                     </h3>
                     <ul class="c12">
                         <li>Database: <span class="c27">employees</span>
@@ -718,54 +838,29 @@ SELECT * FROM employees.salaries; </code></pre>
 
                 </section>
                 <section>
+                  <h3>
+                    SQL has built-in functions!
+                  </h3>
+                  <ul>
+                    <li>The MIN() function returns the smallest value of the selected column.</li>
+                    <li>The MAX() function returns the largest value of the selected column.</li>
+                    <li>The COUNT() function returns the number of rows that matches a specified criteria.</li>
+                    <li>The AVG() function returns the average value of a numeric column.</li>
+                    <li>The SUM() function returns the total sum of a numeric column.</li>
+                  </ul>
+                </section>
+                <section>
+                  <h3>
+                    Trying out some built-in functions
+                  </h3>
+                  <pre><code contenteditable="" class="sql">SELECT AVG(salary) FROM employees.salaries;</code></pre>
+                  <pre><code contenteditable="" class="sql">SELECT MIN(from_date) FROM employees.dept_manager;</code></pre>
+                <section>
                     <h3>
                         Distinct: selecting only unique instances of that column.
                     </h3>
                     <pre><code contenteditable="" class="sql">SELECT DISTINCT  title FROM employees.titles;</code></pre>
-                    <div class="c34">
-                        <table class="c33">
-                            <tr>
-                                <th class="c31">
-                                    title
-                                </th>
-                            </tr>
-                            <tr>
-                                <td class="c32">
-                                    Senior Engineer
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="c32">
-                                    Staff
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="c32">
-                                    Engineer
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="c32">
-                                    Senior Staff
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="c32">
-                                    Assistant Engineer
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="c32">
-                                    Technique Leader
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="c32">
-                                    Manager
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                  </h2><img src="img/distinct-titles.jpg" alt="list of the distinct titles in the database">
                 </section>
                 <section>
                     <h3>
@@ -1270,37 +1365,6 @@ WHERE title LIKE '%Engineer%';</code></pre>
                         </ul>
                     </div>
                     <div class="left c8"></div>
-                </section>
-                <section>
-                    <h3>
-                        Quick Aside for Keys
-                    </h3>
-                    <p>
-                        Tables are joined on special fields called keys
-                    </p>
-                    <ul class="c12">
-                        <li>Primary Key (PK)
-                        </li>
-                        <ul>
-                            <li>A field (or set of fields) that uniquely identify a row
-                            </li>
-                            <!-- <li>In math speak, the minimal set of fields that the row is <span class="c48">functionally dependent</span> upon
-                            </li> -->
-                        </ul>
-                    </ul><br>
-                    <br>
-                    <ul class="c12">
-                        <li>Foreign Reference Key (FK)
-                        </li>
-                        <ul>
-                            <li>A field (or set of fields) that is a PK in some other table
-                            </li>
-                            <li>There can be multiple FK in a table
-                            </li>
-                            <li>Points to a row in another table
-                            </li>
-                        </ul>
-                    </ul>
                 </section>
                 <section>
                     <h3>
